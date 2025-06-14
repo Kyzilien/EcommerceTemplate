@@ -1,0 +1,38 @@
+[
+  {
+    "id": "chocolate-dream",
+    "name": "Chocolate Dream",
+    "price": 40,
+    "image": "images/pops.jpg",
+    "ingredients": "Cocoa, butter, eggs, flour, sugar, vanilla",
+    "description": "This decadent layered chocolate cake is filled with ganache and topped with a glossy chocolate glaze.",
+    "link": "item.html?pid=chocolate-dream"
+  },
+  {
+    "id": "red-velvet",
+    "name": "Red Velvet",
+    "price": 80,
+    "image": "images/pops.jpg",
+    "ingredients": "red stuff, butter, eggs, flour, sugar, vanilla",
+    "description": "It's a red cake",
+    "link": "item.html?pid=red-velvet"
+  },
+  {
+    "id": "baby-vanilla",
+    "name": "Baby Vanilla",
+    "price": 40,
+    "image": "images/pops.jpg",
+    "ingredients": "Vanilla, butter, eggs, flour, sugar, buttermilk",
+    "description": "This beautifully decorated single layer cake is great for all baby related events.",
+    "link": "item.html?pid=baby-vanilla"
+  },
+  {
+    "id": "caramel-explosion",
+    "name": "Caramel Explosion",
+    "price": 30,
+    "image": "images/pops.jpg",
+    "ingredients": "Caramel, butter, eggs, flour, sugar, vanilla",
+    "description": "This simple cake is great for any occasion with an amazing flavor and moist texture.",
+    "link": "item.html?pid=caramel-explosion"
+  }
+]

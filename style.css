@@ -1,0 +1,341 @@
+:root {
+  --primary: #8b453c;
+  --accent: #eec170;
+  --light: #fffdf9;
+  --dark: #2c1d13;
+  --text: #333;
+  --overlay: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: var(--accent);
+  color: var(--dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background: var(--dark);
+  color: white;
+}
+
+/* ABOUT */
+.about {
+  background: var(--light);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* CATEGORY GRID */
+.categories {
+  padding: 4rem 2rem;
+  background: #f7f3ec;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  transition: 0.3s ease;
+}
+
+.category-card span {
+  position: relative;
+  font-size: 1.5rem;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.category-card:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.menu-section {
+  padding: 4rem 2rem;
+  background: var(--light);
+  text-align: center;
+}
+
+.menu-section:nth-of-type(even) {
+  background: #f4f0e6;
+}
+
+.menu-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 1rem;
+}
+
+.card-text h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.item-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.item-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 250px;
+  object-fit: cover;
+}
+
+.item-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* @media Lets you apply an exception to a style. If there is at least 768px of width do this */
+@media (min-width: 768px) {   
+    .item-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .item-image {
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  .item-info {
+    flex: 2;
+  }
+}
+
+
+/* Categories */
+.item-list {
+  display: grid;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item-detail:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.item-search {
+  padding: 2rem;
+  background: #f3efe7;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  padding: 0.8rem;
+  width: 80%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-top: 2rem;
+}

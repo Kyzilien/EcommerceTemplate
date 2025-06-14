@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cakes",
+    "name": "Cakes",
+    "example": "Chocolate Dream",
+    "desc": "Rich chocolate Dream",
+    "image": "images/pops.jpg",
+    "link": "category.html?cid=cakes"
+  },
+  {
+    "id": "cookies",
+    "name": "Cookies",
+    "example": "Rainbow Sprinkles",
+    "desc": "Soft vanilla cookie covered in colorful sprinkles",
+    "image": "images/pops.jpg",
+    "link": "category.html?cid=cookies"
+  },
+  {
+    "id": "pops",
+    "name": "Cake Pops",
+    "example": "Pink Frost Pop",
+    "desc": "Vanilla cake dipped in strawberry frosting and sprinkles.",
+    "image": "images/pops.jpg",
+    "link": "category.html?cid=pops"
+  },
+  {
+    "id": "other",
+    "name": "Other Desserts",
+    "example": "Classic Flan",
+    "desc": "Custard dessert with a golden caramel top.",
+    "image": "images/pops.jpg",
+    "link": "category.html?cid=other"
+  }
+]
