@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | SweetWhisk</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">SweetWhisk</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-form-section">
+    <h2>Send Us a Message</h2>
+
+    <form id="contact-form" action="" method="POST">
+      <!-- Optional real email: https://formsubmit.co/your@email.com -->
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-feedback" class="form-feedback"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SweetWhisk. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline JS for mock feedback -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact-form");
+      const feedback = document.getElementById("form-feedback");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        feedback.textContent = "Thanks! Your message has been sent.";
+        feedback.style.color = "green";
+        form.reset();
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | SweetWhisk</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">SweetWhisk</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="checkout-section">
+    <h2>Checkout</h2>
+
+    <!-- CART SUMMARY -->
+    <div class="cart-summary">
+      <h3>Your Order</h3>
+      <ul id="cart-items">
+        <!-- JS will inject items here -->
+      </ul>
+      <p class="total">Total: $<span id="cart-total">0.00</span></p>
+    </div>
+
+    <!-- CUSTOMER DETAILS -->
+    <form id="checkout-form">
+      <h3>Your Info</h3>
+      <label>Name: <input type="text" name="name" required /></label>
+      <label>Email: <input type="email" name="email" required /></label>
+      <label>Address: <input type="text" name="address" required /></label>
+      <label>Payment Method:
+        <select name="payment" required>
+          <option value="">Select</option>
+          <option value="card">Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </label>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SweetWhisk. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

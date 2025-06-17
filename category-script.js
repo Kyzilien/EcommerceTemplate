@@ -15,12 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       items.forEach(item => {
         const itemHTML = `
-          <section class="item-detail">
+          <section class="item-detail"
+              data-name="${item.name}" 
+              data-desc= "${items.description}"
+              data-example= "${items.ingredients}">
             <div class="item-image">
               <img src="${item.image}" alt="${item.name}">
             </div>
             <div class="item-info">
-              <h2><a href="${item.link}">${item.name}</a></h2>
+              <h2>
+              <a href="${item.link}">
+              ${item.name}
+              </a>
+              </h2>
               <p class="description">${item.description}</p>
               <p><strong>Ingredients:</strong> ${item.ingredients}</p>
               <p><strong>Price:</strong> $${item.price}</p>
@@ -38,4 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+});
+
+
+
+document.getElementById("searchInput").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".item-detail");
+
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const desc = card.dataset.desc.toLowerCase();
+    const example = card.dataset.example.toLowerCase();
+
+    const matches = name.includes(query) || desc.includes(query) || example.includes(query);
+    card.style.display = matches ? "block" : "none";
+  });
 });
