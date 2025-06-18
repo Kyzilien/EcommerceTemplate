@@ -14,11 +14,20 @@
     <div class="logo">SweetWhisk</div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
+      
+      <div class="dropdown">
+        <a href="menu.html" class="dropbtn">Menu</a>
+        <div class="dropdown-content">
+          <a href="category.html?cid=cakes">Cakes</a>
+          <a href="category.html?cid=cookies">Cookies</a>
+          <a href="category.html?cid=pops">Cake Pops</a>
+          <a href="category.html?cid=other">Other</a>
+        </div>
+      </div>
+
       <a href="contact.html">Contact</a>
       <a href="checkout.html">Checkout</a>
     </nav>
-    <button id="add-to-cart">Add to Cart</button>
   </header>
 
   <div class="item">
@@ -30,6 +39,7 @@
       <p class="description"></p>
       <p><strong>Ingredients:</strong> <span class="ingredients"></span></p>
       <p><strong>Price:</strong> <span class="price"></span></p>
+      <button id="add-to-cart">Add to Cart</button>
     </div>
   </div>
   

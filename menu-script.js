@@ -11,21 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const itemList = document.getElementById("categoryList");
       itemList.innerHTML = "";
 
-
-      items.forEach(items => {
+      items.forEach((item, index) => {
+        const bgClass = index % 2 === 0 ? "bg-light" : "bg-alt";
         const itemHTML = `
-          <section class="menu-section" id="${items.id}">
-            <h2>${items.name}</h2>
+          <section class="menu-section ${bgClass}" 
+                   id="${item.id}"
+                   data-name="${item.name}" 
+                   data-desc="${item.desc}" 
+                   data-example="${item.example}">
+            <h2>${item.name}</h2>
             <div class="menu-grid">
-              <a href="${items.link}" 
-              class="menu-card" 
-              data-name="${items.name}" 
-              data-desc= "${items.desc}"
-              data-example= "${items.example}">
-                <img src="images/${items.id}.jpg" alt="${items.name} Category">
+              <a href="${item.link}" class="menu-card">
+                <img src="images/${item.id}.jpg" alt="${item.name} Category">
                 <div class="card-text">
-                  <h3>${items.example}</h3>
-                  <p>${items.desc}</p>
+                  <h3>${item.example}</h3>
+                  <p>${item.desc}</p>
                 </div>
               </a>
             </div>
@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
         itemList.innerHTML += itemHTML;
       });
 
+      items.forEach((item, index) => {
+        const bgClass = index % 2 === 0 ? "bg-light" : "bg-alt";
+        const itemHTML = `
+          <section class="menu-section ${bgClass}" id="${item.id}">
+            ...
+          </section>
+        `;
+        itemList.innerHTML += itemHTML;
+      });
 
     });
 });
@@ -41,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("searchInput").addEventListener("input", function () {
   const query = this.value.toLowerCase();
-  const cards = document.querySelectorAll(".menu-card");
+  const cards = document.querySelectorAll(".menu-section");
+  let anyVisible = false;
 
   cards.forEach(card => {
     const name = card.dataset.name.toLowerCase();
@@ -50,5 +60,8 @@ document.getElementById("searchInput").addEventListener("input", function () {
 
     const matches = name.includes(query) || desc.includes(query) || example.includes(query);
     card.style.display = matches ? "block" : "none";
+    if (matches) anyVisible = true;
   });
+
+  document.getElementById("noResults").style.display = anyVisible ? "none" : "block";
 });

@@ -1,3 +1,6 @@
+/* ===========================
+   GLOBAL VARIABLES + RESET
+=========================== */
 :root {
   --primary: #8b453c;
   --accent: #eec170;
@@ -20,7 +23,9 @@ body {
   line-height: 1.6;
 }
 
-/* NAV */
+/* ===========================
+   NAVIGATION
+=========================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -36,6 +41,12 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-links a {
@@ -54,8 +65,45 @@ body {
   border-bottom: 2px solid var(--accent);
 }
 
+.dropdown {
+  position: relative;
+}
 
-/* HERO */
+.dropdown .dropbtn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--accent);
+  color: var(--dark);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* ===========================
+   HERO SECTION
+=========================== */
 .hero {
   height: 100vh;
   background: url('images/hero.jpg') center/cover no-repeat;
@@ -105,7 +153,9 @@ body {
   color: white;
 }
 
-/* ABOUT */
+/* ===========================
+   ABOUT SECTION
+=========================== */
 .about {
   background: var(--light);
   padding: 5rem 2rem;
@@ -123,7 +173,9 @@ body {
   color: var(--primary);
 }
 
-/* CATEGORY GRID */
+/* ===========================
+   CATEGORIES PAGE
+=========================== */
 .categories {
   padding: 4rem 2rem;
   background: #f7f3ec;
@@ -174,15 +226,12 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* FOOTER */
-footer {
-  background: var(--dark);
-  color: #eee;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
+.bg-light { background-color: #fffdf9; }
+.bg-alt { background-color: #f4f0e6; }
 
+/* ===========================
+   MENU + GRID SECTIONS
+=========================== */
 .menu-section {
   padding: 4rem 2rem;
   background: var(--light);
@@ -236,15 +285,18 @@ footer {
   color: var(--primary);
 }
 
-.item-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
+/* ===========================
+   ITEM PAGES
+=========================== */
+.item-list {
+  display: grid;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
+
+.item-detail,
 .item {
   display: flex;
   flex-direction: column;
@@ -255,12 +307,17 @@ footer {
   padding: 2rem;
 }
 
+.item-detail:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
 .item-image img {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
   height: 250px;
-  object-fit: cover;
 }
 
 .item-info h2 {
@@ -273,13 +330,15 @@ footer {
   line-height: 1.4;
 }
 
-/* @media Lets you apply an exception to a style. If there is at least 768px of width do this */
-@media (min-width: 768px) {   
-    .item-detail {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-top: 2rem;
+}
 
+@media (min-width: 768px) {
+  .item-detail,
   .item {
     flex-direction: row;
     align-items: flex-start;
@@ -295,22 +354,9 @@ footer {
   }
 }
 
-
-/* Categories */
-.item-list {
-  display: grid;
-  gap: 3rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.item-detail:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
+/* ===========================
+   SEARCH BAR
+=========================== */
 .item-search {
   padding: 2rem;
   background: #f3efe7;
@@ -333,15 +379,22 @@ footer {
   border-color: var(--primary);
 }
 
-.section-title {
+#noResults {
+  display: none;
   text-align: center;
-  font-size: 2rem;
-  color: var(--primary);
-  margin-top: 2rem;
+  font-size: 1.2rem;
+  padding: 4rem 2rem;
+  background: #f9f6f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
 
-/*Checkout*/
+/* ===========================
+   CHECKOUT PAGE
+=========================== */
 .checkout-section {
   padding: 4rem 2rem;
   max-width: 800px;
@@ -388,7 +441,9 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-/*Contact*/
+/* ===========================
+   CONTACT PAGE
+=========================== */
 .contact-form-section {
   padding: 4rem 2rem;
   background: var(--light);
@@ -429,4 +484,15 @@ button[type="submit"] {
 .form-feedback {
   margin-top: 1rem;
   font-weight: bold;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: var(--dark);
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }

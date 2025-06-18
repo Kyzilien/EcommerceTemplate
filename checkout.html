@@ -7,6 +7,7 @@
   <title>Checkout | SweetWhisk</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <script defer src="checkout-script.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,17 @@
     <div class="logo">SweetWhisk</div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
+    
+      <div class="dropdown">
+        <a href="menu.html" class="dropbtn">Menu</a>
+        <div class="dropdown-content">
+          <a href="category.html?cid=cakes">Cakes</a>
+          <a href="category.html?cid=cookies">Cookies</a>
+          <a href="category.html?cid=pops">Cake Pops</a>
+          <a href="category.html?cid=other">Other</a>
+        </div>
+      </div>
+    
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -26,7 +37,6 @@
     <div class="cart-summary">
       <h3>Your Order</h3>
       <ul id="cart-items">
-        <!-- JS will inject items here -->
       </ul>
       <p class="total">Total: $<span id="cart-total">0.00</span></p>
     </div>
@@ -44,7 +54,7 @@
           <option value="paypal">PayPal</option>
         </select>
       </label>
-      <button type="submit">Place Order</button>
+      <button type="submit">Place Inquery</button>
     </form>
   </section>
 

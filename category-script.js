@@ -47,11 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
 document.getElementById("searchInput").addEventListener("input", function () {
   const query = this.value.toLowerCase();
   const cards = document.querySelectorAll(".item-detail");
+  let anyVisible = false;
 
   cards.forEach(card => {
     const name = card.dataset.name.toLowerCase();
@@ -60,5 +59,8 @@ document.getElementById("searchInput").addEventListener("input", function () {
 
     const matches = name.includes(query) || desc.includes(query) || example.includes(query);
     card.style.display = matches ? "block" : "none";
+    if (matches) anyVisible = true;
   });
+
+  document.getElementById("noResults").style.display = anyVisible ? "none" : "block";
 });

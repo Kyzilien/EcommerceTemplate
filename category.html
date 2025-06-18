@@ -12,12 +12,22 @@
 
   <header class="navbar">
     <div class="logo">SweetWhisk</div>
+    
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
+      <div class="dropdown">
+        <a href="menu.html" class="dropbtn">Menu</a>
+        <div class="dropdown-content">
+          <a href="category.html?cid=cakes">Cakes</a>
+          <a href="category.html?cid=cookies">Cookies</a>
+          <a href="category.html?cid=pops">Cake Pops</a>
+          <a href="category.html?cid=other">Other</a>
+        </div>
+      </div>
       <a href="contact.html">Contact</a>
       <a href="checkout.html">Checkout</a>
     </nav>
+
   </header>
 
   <div>
@@ -33,8 +43,9 @@
     </section>
 
     <div class="item-list" id="itemList">
-      
-        <!-- Cake items are dynamically created in HTML using loaded values -->
+
+      <p id="noResults" style="display:none; text-align:center;">No results found.</p>
+      <!-- Cake items are dynamically created in HTML using loaded values -->
 
     </div>
 

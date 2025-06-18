@@ -44,29 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(() => {
       document.querySelector(".item-info").innerHTML = "<p>Error loading item data.</p>";
     });
+
+    const addToCartBtn = document.getElementById("add-to-cart");
+
+    addToCartBtn.addEventListener("click", () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+      const item = {
+        id: matchedId,
+        name: document.querySelector(".item-info h2").textContent,
+        price: parseFloat(document.querySelector(".price").textContent.replace("$", "")),
+        quantity: 1
+      };
+    
+      // Check if item already in cart
+      const existing = cart.find(c => c.id === item.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(item);
+      }
+    
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${document.querySelector(".item-info h2").textContent} added to cart!`);
+    });
+    
 });
 
 
-const addToCartBtn = document.getElementById("add-to-cart");
-
-addToCartBtn.addEventListener("click", () => {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const item = {
-    id: selectedItem.id,
-    name: selectedItem.name,
-    price: selectedItem.price,
-    quantity: 1
-  };
-
-  // Check if item already in cart
-  const existing = cart.find(c => c.id === item.id);
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push(item);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert(`${selectedItem.name} added to cart!`);
-});
